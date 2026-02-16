@@ -1,0 +1,80 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* NAVBAR (opcional si usas Bootstrap puedes omitir esto) */
+.navbar {
+  position: relative;
+  z-index: 10;
+}
+
+/* CONTENEDOR DEL LOGIN */
+.auth-wrapper {
+  min-height: calc(100vh - 56px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* TARJETA LOGIN */
+.auth-container {
+  background: white;
+  padding: 2rem;
+  width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 0.6rem;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background: #0b5ed7;
+}
+
+.auth-container p {
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
+.alert {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border-left: 5px solid #ffc107;
+  font-size: 14px;
+}
