@@ -26,9 +26,18 @@ foreach ($routeArray as $key => $value) {
 
 <body>
     <?php
-    include 'pages/components/header.php';
-    if (!empty($routeArray[0])) {
 
+    if ($routeArray[0] == "admin") {
+        AuthHelper::authVerifyRole("admin");
+        include "pages/" . $routeArray[0] . "/" . $routeArray[0] . ".php";
+    }
+
+    if ($routeArray[0] !== "admin") {
+        include 'pages/components/header.php';
+    }
+    
+    if ($routeArray[0] !== "admin") {
+        
         // LOGIN ROUTE
         if ($routeArray[0] == "login") {
 
@@ -53,12 +62,11 @@ foreach ($routeArray as $key => $value) {
         // LOGIN ROUTE
 
         // LOGOUT ROUTE
-        elseif ($routeArray[0] == "logout")
-            {
-                session_destroy();
-                header("Location: login");
-                exit();
-            }
+        elseif ($routeArray[0] == "logout") {
+            session_destroy();
+            header("Location: login");
+            exit();
+        }
         // LOGOUT ROUTE
 
         // HOME ROUTE
@@ -78,15 +86,6 @@ foreach ($routeArray as $key => $value) {
             include "pages/" . $routeArray[0] . "/" . $routeArray[0] . ".php";
         }
         // REGISTER ROUTE
-
-        // ADMIN PANEL ROUTE
-
-        elseif ($routeArray[0] == "admin") {
-            AuthHelper::authVerifyRole("admin");
-            include "pages/" . $routeArray[0] . "/" . $routeArray[0] . ".php";
-        }
-
-        // ADMIN PANEL ROUTE
 
         else {
             include "pages/404/404.php";
