@@ -181,15 +181,6 @@
                                             echo '</tr>';
                                         }
                                         ?>
-                                        <!-- <tr>
-                                            <td>1</td>
-                                            <td>Hector</td>
-                                            <td>García</td>
-                                            <td>hector.garcia@example.com</td>
-                                            <td>+34 600 123 456</td>
-                                            <td>Calle Falsa 123, Madrid</td>
-                                            <td>28-10-10</td>
-                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
