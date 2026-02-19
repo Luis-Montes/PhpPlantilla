@@ -163,29 +163,33 @@
                                         <!-- Aquí se cargarán las personas desde PHP -->
                                         <?php
                                         // Ejemplo de cómo iterar personas desde PHP:
-                                        // foreach ($personas as $persona) {
-                                        //     echo '<tr>';
-                                        //     echo '<td>' . $persona['id'] . '</td>';
-                                        //     echo '<td>' . $persona['nombre'] . '</td>';
-                                        //     echo '<td>' . $persona['apellido'] . '</td>';
-                                        //     echo '<td>' . $persona['email'] . '</td>';
-                                        //     echo '<td>' . ($persona['telefono'] ?? '-') . '</td>';
-                                        //     echo '<td>' . ($persona['direccion'] ?? '-') . '</td>';
-                                        //     echo '<td>' . $persona['fecha_nacimiento'] . '</td>';
-                                        //     echo '<td>';
-                                        //     echo '<a href="?action=edit&id=' . $persona['id'] . '" class="btn-action btn-edit me-2">';
-                                        //     echo '<i class="bi bi-pencil"></i> Editar</a>';
-                                        //     echo '<a href="?action=delete&id=' . $persona['id'] . '" class="btn-action btn-delete" onclick="return confirm(\'¿Eliminar a ' . $persona['nombre'] . '?\')">';
-                                        //     echo '<i class="bi bi-trash"></i> Eliminar</a>';
-                                        //     echo '</td>';
-                                        //     echo '</tr>';
-                                        // }
+                                        foreach ($personas as $persona) {
+                                            echo '<tr>';
+                                            echo '<td>' . $persona['id_persona'] . '</td>';
+                                            echo '<td>' . $persona['name_persona'] . '</td>';
+                                            echo '<td>' . $persona['lastname_user'] . '</td>';
+                                            echo '<td>' . $persona['email_user'] . '</td>';
+                                            echo '<td>' . ($persona['phone_persona'] ?? '-') . '</td>';
+                                            echo '<td>' . ($persona['address_persona'] ?? '-') . '</td>';
+                                            echo '<td>' . $persona['birth_date_persona'] . '</td>';
+                                            echo '<td>';
+                                            echo '<a href="?action=edit&id=' . $persona['id_persona'] . '" class="btn-action btn-edit me-2">';
+                                            echo '<i class="bi bi-pencil"></i> Editar</a>';
+                                            echo '<a href="?action=delete&id=' . $persona['id_persona'] . '" class="btn-action btn-delete" onclick="return confirm(\'¿Eliminar a ' . $persona['name_persona'] . '?\')">';
+                                            echo '<i class="bi bi-trash"></i> Eliminar</a>';
+                                            echo '</td>';
+                                            echo '</tr>';
+                                        }
                                         ?>
-                                        <tr>
-                                            <td colspan="8" class="text-center text-muted py-4">
-                                                No hay personas registradas.
-                                            </td>
-                                        </tr>
+                                        <!-- <tr>
+                                            <td>1</td>
+                                            <td>Hector</td>
+                                            <td>García</td>
+                                            <td>hector.garcia@example.com</td>
+                                            <td>+34 600 123 456</td>
+                                            <td>Calle Falsa 123, Madrid</td>
+                                            <td>28-10-10</td>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>

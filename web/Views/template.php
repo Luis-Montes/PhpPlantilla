@@ -29,6 +29,10 @@ foreach ($routeArray as $key => $value) {
 
     if ($routeArray[0] == "admin") {
         AuthHelper::authVerifyRole("admin");
+        
+        include_once __DIR__ . '/../Controllers/PersonaController.php';
+        $personas = PersonaController::index();
+
         include "pages/" . $routeArray[0] . "/" . $routeArray[0] . ".php";
     }
 
