@@ -201,6 +201,18 @@
         </div>
     </div>
 
+    <!-- Enviando los datos a la base de datos -->
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        require_once __DIR__ . "/../../../Controllers/PersonaController.php";
+        $result = PersonaController::create();
+
+        if ($result == "error") {
+            echo '<div class="alert alert-danger">Ocurrió un error al guardar la persona.</div>';
+        }
+    }
+    ?>
+
     <!-- Modal para Añadir/Editar Persona -->
     <div class="modal fade" id="personaModal" tabindex="-1" aria-labelledby="personaModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -210,37 +222,37 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="personaForm" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                        <input type="hidden" id="personaId">
+                    <form id="personaForm" method="POST" 
+                        <input type="hidden" id="id_persona">
 
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre *</label>
-                            <input type="text" class="form-control" id="nombre" required>
+                            <input name="name_persona" type="text" class="form-control" id="nombre" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="apellido" class="form-label">Apellido *</label>
-                            <input type="text" class="form-control" id="apellido" required>
+                            <input name="lastname_user" type="text" class="form-control" id="apellido" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email *</label>
-                            <input type="email" class="form-control" id="email" required>
+                            <input name="email_user" type="email" class="form-control" id="email" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono">
+                            <input name="phone_persona" type="tel" class="form-control" id="telefono">
                         </div>
 
                         <div class="mb-3">
                             <label for="direccion" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="direccion">
+                            <input name="address_persona" type="text" class="form-control" id="direccion">
                         </div>
 
                         <div class="mb-3">
                             <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="fecha_nacimiento">
+                            <input name="birth_date_persona" type="date" class="form-control" id="fecha_nacimiento">
                         </div>
                     </form>
                 </div>

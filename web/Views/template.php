@@ -29,7 +29,7 @@ foreach ($routeArray as $key => $value) {
 
     if ($routeArray[0] == "admin") {
         AuthHelper::authVerifyRole("admin");
-        
+
         include_once __DIR__ . '/../Controllers/PersonaController.php';
         $personas = PersonaController::index();
 
@@ -39,9 +39,9 @@ foreach ($routeArray as $key => $value) {
     if ($routeArray[0] !== "admin") {
         include 'pages/components/header.php';
     }
-    
+
     if ($routeArray[0] !== "admin") {
-        
+
         // LOGIN ROUTE
         if ($routeArray[0] == "login") {
 
@@ -90,10 +90,6 @@ foreach ($routeArray as $key => $value) {
             include "pages/" . $routeArray[0] . "/" . $routeArray[0] . ".php";
         }
         // REGISTER ROUTE
-
-        else {
-            include "pages/404/404.php";
-        }
     }
     ?>
 

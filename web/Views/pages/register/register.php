@@ -32,6 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Registrarse</button>
         </form>
 
-        <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+        <p>¿Ya tienes cuenta? <a href="login">Inicia sesión</a></p>
     </div>
 </div>
